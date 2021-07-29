@@ -9,6 +9,18 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MyStudyGoGo">
+        <service
+            android:name=".serviceStudy.PlayMusicService"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.ak.service.music"/>
+            </intent-filter>
+        </service>
+
+        <activity android:name=".serviceStudy.PlayMusicActivity">
+
+        </activity>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
