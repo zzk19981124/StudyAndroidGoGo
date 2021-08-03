@@ -34,6 +34,7 @@ public class MainActivity extends AppCompatActivity {
         mContext = MainActivity.this;
         initView();//初始化控件
         bindItemListener();//绑定listView的长按监听事件
+
     }
 
     private void initView() {
