@@ -12,34 +12,33 @@ class MyFirst {
 
 }
 
+
+
+fun main() {
+
+    for (i in 10 downTo 0 step 3){
+        println(i)
+    }
+
+    val cellphone1 = Cellphone("sumsung",1299.99)
+    val cellphone2 = Cellphone("sumsung",1299.99)
+    println(cellphone1)
+    println(cellphone2)
+    println("cellphone1 equals cellphone2 "+ (cellphone1 == cellphone2))
+
+}
+
 fun methodName(param1: Int, param2: Int): Int {
     return 0
 }
 
-fun main() {
-    var a: Int = 10
-    var b: Int = 20
-
-    println("a = " + a)
-    println("b = " + b)
-    println("a+b = " + a + b)
-    println(a * 10)
-    val value = largerNumber(a, b)
-
-    println("larger num is : " + value)
-    println(getScore("Lily"))
-
-    val num = 10L
-    checkNumber(num)
-}
-
 fun largerNumber(num1: Int, num2: Int) = if (num1 > num2) num1 else num2
 
-fun getScore(name: String) = when (name) {
-    "Tom" -> 86
-    "Jim" -> 77
-    "Jack" -> 95
-    "Lily" -> 100
+fun getScore(name: String) = when {
+    name.startsWith("Tom") -> 86
+    name=="Jim" -> 77
+    name=="Jack" -> 95
+    name=="Lily" -> 100
     else -> 0
 }
 fun checkNumber(num:Number){
