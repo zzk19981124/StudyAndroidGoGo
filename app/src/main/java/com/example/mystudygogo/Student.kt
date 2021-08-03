@@ -12,7 +12,8 @@ class Student(val sno: String, val grade: Int, name: String, age: Int) : Person(
 
     constructor() : this("", 0) {
     }
-
+    val name1 ="hello world"
+    val name2 = 0
     init {
         println("sno is " + sno)
         println("grade is " + grade)
@@ -77,8 +78,11 @@ fun main() {
 }
 
 fun doStudy(study: Study?) {
-    study?.readBooks()
-    study?.doHomeWork()
+    study?.let {
+        it.readBooks()
+        it.doHomeWork()
+    }
+
 }
 
 fun getTextLength(text: String?): Int {

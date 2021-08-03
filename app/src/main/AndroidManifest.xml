@@ -9,18 +9,19 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MyStudyGoGo">
-        <activity android:name=".ActivityStudy.TestActivity">
+        <activity android:name=".FirstActivity"
+            android:label="This is FirstActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".contentProviderStudy.MyContentActivity"></activity>
-        <activity android:name=".broadcastStudy.MyBroadCastActivity"></activity>
+        <activity android:name=".ActivityStudy.TestActivity"></activity>
+        <activity android:name=".contentProviderStudy.MyContentActivity" />
+        <activity android:name=".broadcastStudy.MyBroadCastActivity" />
         <activity android:name=".serviceStudy.PlayMusicActivity" />
-        <activity android:name=".MainActivity" />
-        <!-- 声明receiver -->
+        <activity android:name=".MainActivity" /> <!-- 声明receiver -->
         <receiver android:name=".broadcastStudy.MyReciver">
             <intent-filter>
                 <action android:name="com.ak.receiver.myreciver" />
@@ -28,7 +29,8 @@
         </receiver> <!-- 声明contentProvider -->
         <provider
             android:name=".contentProviderStudy.MyContentProvider"
-            android:authorities="com.ak.MyContentProvider"></provider>
+            android:authorities="com.ak.MyContentProvider" />
+
         <service
             android:name=".serviceStudy.PlayMusicService"
             android:enabled="true"
