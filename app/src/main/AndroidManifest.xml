@@ -13,13 +13,15 @@
         <activity
             android:name=".FirstActivity"
             android:label="This is FirstActivity">
+
+        </activity>
+        <activity android:name=".ActivityStudy.TestActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ActivityStudy.TestActivity" />
         <activity android:name=".contentProviderStudy.MyContentActivity" />
         <activity android:name=".broadcastStudy.MyBroadCastActivity" />
         <activity android:name=".serviceStudy.PlayMusicActivity" />
