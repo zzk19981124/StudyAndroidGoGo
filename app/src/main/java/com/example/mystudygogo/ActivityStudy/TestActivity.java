@@ -6,6 +6,7 @@ import androidx.core.app.NotificationCompat;
 import android.app.Notification;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
+import android.graphics.BitmapFactory;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
@@ -27,19 +28,21 @@ public class TestActivity extends AppCompatActivity {
              manager.createNotificationChannel(channel);
          }
 
-         notification = new NotificationCompat.Builder(this, "leo")
+        notification = new NotificationCompat.Builder(this, "leo")
                 .setContentTitle("官方通知")
                 .setContentText("世界那么大，想去走走吗")
                 .setSmallIcon(R.drawable.ic_android_black_24dp)
+                .setLargeIcon(BitmapFactory.decodeResource(getResources(),R.drawable.q1))
                 .build();
 
     }
 
     public void CancelNotification(View view) {
-
+        manager.cancel(1);
     }
 
     public void sendNotification(View view) {
         manager.notify(1,notification);
+
     }
 }

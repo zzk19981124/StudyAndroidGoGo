@@ -26,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
     private Context mContext;
     private Intent it = null;
     private List<Class> activities = null;
+
     //private List<Class<PlayMusicActivity>> activitiesList = new ArrayList<Class<PlayMusicActivity>>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {

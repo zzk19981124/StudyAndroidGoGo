@@ -9,18 +9,19 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MyStudyGoGo">
-        <activity android:name=".SecondActivity"></activity>
-        <activity
-            android:name=".FirstActivity"
-            android:label="This is FirstActivity">
-
-        </activity>
-        <activity android:name=".ActivityStudy.TestActivity" >
+        <activity android:name=".ActivityStudy.ListActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity android:name=".SecondActivity" />
+        <activity
+            android:name=".FirstActivity"
+            android:label="This is FirstActivity" />
+        <activity android:name=".ActivityStudy.TestActivity">
+
         </activity>
         <activity android:name=".contentProviderStudy.MyContentActivity" />
         <activity android:name=".broadcastStudy.MyBroadCastActivity" />
