@@ -1,5 +1,7 @@
 package com.example.mystudygogo;
 
+import android.content.Intent;
+
 import com.example.mystudygogo.bean.Job;
 import com.example.mystudygogo.bean.User;
 import com.google.gson.Gson;
@@ -9,7 +11,9 @@ import org.junit.Test;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * @author hello word
@@ -83,5 +87,28 @@ public class ObjectUnitTest {
         for (User list:list2){
             System.out.println(list);
         }
+    }
+    @Test
+    public void testMapObject(){
+        Map<Integer,User> map1 = new HashMap<>();
+        map1.put(1,new User("ak1","123",false,22));
+        map1.put(2,new User("admin","admin",false,11));
+        map1.put(3,new User("admin","123",true,33));
+        map1.put(4,null);
+
+        Gson gson = new Gson();
+
+        String json = gson.toJson(map1);
+        /*for (int i = 0;i<4;i++){
+            System.out.println();
+        }*/
+        System.out.println("序列化"+json);
+
+        Type type = new TypeToken<Map<Integer,User>>(){}.getType();
+        Map<Integer,User> map2 = gson.fromJson(json,type);
+        for (int i = 0;i<4;i++){
+            System.out.println(map2.get(i));
+        }
+        //System.out.println(map2);
     }
 }
