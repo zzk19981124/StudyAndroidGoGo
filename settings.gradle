@@ -1,3 +1,4 @@
+include ':bluetoothtest'
 include ':fragmentModule'
 include ':app'
 rootProject.name = "MyStudyGoGo"

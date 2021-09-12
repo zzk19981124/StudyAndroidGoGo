@@ -7,7 +7,7 @@ android {
     buildToolsVersion "30.0.3"
 
     defaultConfig {
-        applicationId "com.example.fragmentmodule"
+        applicationId "com.example.bluetoothtest"
         minSdkVersion 21
         targetSdkVersion 30
         versionCode 1
@@ -25,12 +25,6 @@ android {
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
-    }
-}
-
-repositories {
-    flatDir {
-        dirs 'libs'
     }
 }
 
