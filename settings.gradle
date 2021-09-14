@@ -1,3 +1,4 @@
+include ':bluetoothtest1'
 include ':bluetoothtest'
 include ':fragmentModule'
 include ':app'

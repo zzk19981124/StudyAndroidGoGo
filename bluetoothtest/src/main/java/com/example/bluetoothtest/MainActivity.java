@@ -8,6 +8,7 @@ import android.bluetooth.BluetoothDevice;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.icu.text.Edits;
 import android.os.Bundle;
 import android.provider.MediaStore;
@@ -18,7 +19,6 @@ import java.util.Iterator;
 import java.util.Set;
 
 public class MainActivity extends AppCompatActivity {
-    private Context mContext;
     private static final String TAG =MainActivity.class.getSimpleName();
     private static final int REQUEST_ENABLE_BT = 0;
     private BluetoothAdapter bAdapter = BluetoothAdapter.getDefaultAdapter();
@@ -26,15 +26,24 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public void onReceive(Context context, Intent intent) {
             String action = intent.getAction();
-
+            //发现设备
+            if (BluetoothDevice.ACTION_FOUND.equals(action)){
+                //获得bluetoothDevice
+                BluetoothDevice device = intent.getParcelableExtra(BluetoothDevice.EXTRA_DEVICE);
+                String deviceStr = "name:"+device.getName()+"  address:"+device.getAddress();
+                Log.d(TAG, "onReceive: "+deviceStr);
+            }
         }
     };
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         checkPermission();
         requestPermission();
+        IntentFilter filter = new IntentFilter(BluetoothDevice.ACTION_FOUND);
+        //filter.can
     }
 
     /*检查判断蓝牙开启相关*/
@@ -85,5 +94,12 @@ public class MainActivity extends AppCompatActivity {
                 }
                 break;
         }
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        //关闭广播
+        unregisterReceiver(mReceiver);
     }
 }
