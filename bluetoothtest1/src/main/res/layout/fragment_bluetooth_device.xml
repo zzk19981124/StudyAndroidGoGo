@@ -5,6 +5,7 @@
     android:layout_height="match_parent"
     tools:context=".BluetoothDeviceFragment">
     <RelativeLayout
+        android:id="@+id/frag_device_top_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <TextView
@@ -19,7 +20,7 @@
             android:layout_height="wrap_content"
             style="@style/baseTextStyle"/>
         <Button
-            android:id="@+id/frag_refresh_btn"
+            android:id="@+id/frag_device_refresh_btn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="刷新"
@@ -28,5 +29,9 @@
             android:layout_marginTop="11dp"
             android:layout_marginRight="20dp"/>
     </RelativeLayout>
-
+    <ListView
+        android:id="@+id/frag_device_lv"
+        android:layout_below="@+id/frag_device_top_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
 </RelativeLayout>

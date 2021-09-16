@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
+import android.content.Context;
 import android.os.Bundle;
 import android.widget.CompoundButton;
 import android.widget.RadioGroup;
@@ -13,8 +14,9 @@ import com.inuker.bluetooth.library.BluetoothClient;
 
 public class MainActivity extends AppCompatActivity {
     private Switch mSwitch;
+    private Context mContext;
     private BluetoothAdapter mBluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
-    private BluetoothClient mClient = new BluetoothClient(this);
+    //private BluetoothClient mClient = new BluetoothClient(mContext);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
