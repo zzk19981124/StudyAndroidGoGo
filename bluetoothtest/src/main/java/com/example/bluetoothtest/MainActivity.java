@@ -73,6 +73,7 @@ public class MainActivity extends AppCompatActivity {
                 //测试，已配对过的设备先打印出来
                 //System.out.println(device.getName()+"\n"+device.getAddress());
                 Log.d(TAG, "checkAlreadyConnect: "+device.getName()+"\n"+device.getAddress());
+
             }
         }
     }
